@@ -2623,6 +2623,11 @@ html[data-contact="card"] .cf-input:focus { background: #fff; }
 
 <!-- ─── JS: SCROLL REVEAL ─── -->
 <script>
+// 読み込み時は常にページ最上部から表示する（ブラウザのスクロール位置復元を無効化）
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+window.addEventListener('load', function(){ window.scrollTo(0, 0); });
+
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
