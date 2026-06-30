@@ -1375,10 +1375,15 @@ footer {
   .reserve-buttons { flex-direction: column; align-items: center; }
   .btn-primary, .btn-outline { width: 100%; max-width: 320px; text-align: center; padding: 16px 24px; }
   /* contact */
-  #contact { padding: 44px 20px; }
-  html[data-contact="split"] .contact-inner { grid-template-columns: 1fr; gap: 24px; }
+  #contact { padding: 44px 22px; overflow-x: hidden; }
+  html[data-contact="split"] .contact-inner { grid-template-columns: 1fr; gap: 24px; width: 100%; max-width: 100%; box-sizing: border-box; }
   html[data-contact="split"] .contact-sub { max-width: none; margin-bottom: 18px; }
   html[data-contact="split"] .contact-details { max-width: none; }
+  /* keep all form elements inside the viewport */
+  #contact .contact-form { width: 100%; max-width: 100%; box-sizing: border-box; }
+  #contact .cf-input,
+  #contact .cf-textarea { width: 100%; max-width: 100%; box-sizing: border-box; }
+  #contact .contact-details .cd-v { overflow-wrap: anywhere; word-break: break-word; }
 
   /* all section titles left-aligned on mobile */
   #reserve .reveal > .section-label,
